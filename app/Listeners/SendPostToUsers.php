@@ -5,6 +5,7 @@ namespace App\Listeners;
 use App\Events\PostCreated;
 use App\Jobs\SendEmailJob;
 use App\Mail\PostCreatedEmail;
+use App\Models\EmailSendConfirmation;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Log;
@@ -32,6 +33,12 @@ class SendPostToUsers
 
         foreach ($subscribers as $subscriber) {
             SendEmailJob::dispatch($subscriber, $post);
+
+            EmailSendConfirmation::create([
+                'subscription_id' => $subscriber->id,
+                'post_id' => $post->id,
+                'is_confirmed' => false,
+            ]);
         }
     }
 }
