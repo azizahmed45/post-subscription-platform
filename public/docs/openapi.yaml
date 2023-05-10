@@ -1,0 +1,74 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/posts:
+    post:
+      summary: ''
+      operationId: postApiPosts
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 1000 characters.'
+                  example: ftskganosocojvxgot
+                content:
+                  type: string
+                  description: 'Must not be greater than 33000 characters.'
+                  example: wuvkvbxhwafnkypwqsddvx
+                website_id:
+                  type: string
+                  description: ''
+                  example: dolorem
+              required:
+                - title
+                - content
+                - website_id
+      security: []
+  /api/subscribe:
+    post:
+      summary: ''
+      operationId: postApiSubscribe
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: trantow.rey@example.net
+                website_id:
+                  type: string
+                  description: ''
+                  example: nostrum
+              required:
+                - email
+                - website_id
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''

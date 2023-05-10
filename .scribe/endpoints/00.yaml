@@ -1,0 +1,103 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/posts
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'Must not be greater than 1000 characters.'
+        required: true
+        example: ftskganosocojvxgot
+        type: string
+        custom: []
+      content:
+        name: content
+        description: 'Must not be greater than 33000 characters.'
+        required: true
+        example: wuvkvbxhwafnkypwqsddvx
+        type: string
+        custom: []
+      website_id:
+        name: website_id
+        description: ''
+        required: true
+        example: dolorem
+        type: string
+        custom: []
+    cleanBodyParameters:
+      title: ftskganosocojvxgot
+      content: wuvkvbxhwafnkypwqsddvx
+      website_id: dolorem
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/subscribe
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: trantow.rey@example.net
+        type: string
+        custom: []
+      website_id:
+        name: website_id
+        description: ''
+        required: true
+        example: nostrum
+        type: string
+        custom: []
+    cleanBodyParameters:
+      email: trantow.rey@example.net
+      website_id: nostrum
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
