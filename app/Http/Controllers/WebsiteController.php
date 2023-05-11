@@ -10,7 +10,7 @@ class WebsiteController extends Controller
     public function subscribe(Request $request)
     {
         $request->validate([
-            'email' => 'required|email|unique:subscriptions,email',
+            'email' => 'required|email|unique:subscriptions,email,NULL,id,website_id,' . $request->website_id,
             'website_id' => 'required|exists:websites,id',
         ]);
 

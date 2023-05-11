@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Mail\PostCreatedEmail;
+use App\Models\EmailSendConfirmation;
 use App\Models\Post;
 use App\Models\Subscription;
 use Illuminate\Bus\Queueable;
@@ -35,5 +36,10 @@ class SendEmailJob implements ShouldQueue
     public function handle(): void
     {
         Mail::to($this->subscriber->email)->send(new PostCreatedEmail($this->post));
+
+        EmailSendConfirmation::query()
+            ->where('subscription_id', $this->subscriber->id)
+            ->where('post_id', $this->post->id)
+            ->update(['is_confirmed' => true]);
     }
 }
